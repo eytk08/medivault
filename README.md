@@ -144,6 +144,4 @@ Run the practice queries with: `mysql -u root -p medivault < db/queries.sql`
 * Doctor accounts that can view the records of their own patients
 * Export a record as a PDF
 
-## Team
 
-Add the names of your group members and each person's part here.
