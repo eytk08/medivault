@@ -1,0 +1,430 @@
+@import url(plein.css);
+
+
+:root{
+    --c-dark: #212529;
+    --c-brand: #258a8a;
+    --c-brand-light: #40afaf;
+    --c-brand-rgb: 78, 87, 212;
+    --c-body: #727272;
+    --c-white: #f1f1f1;
+    --c-grey: #cecece9c ;
+    --font-base: "Plein-Variable", sans-serif;
+    --box-shadow: 0px 15px 25px rgba( 0, 0, 0, 0, 0.8);
+    --transition: all 0.5s ease;
+}
+
+.btn{
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-radius: 10px ;
+    padding: 10px 24px ;
+}
+
+.btn-brand{
+    background-color: var(--c-brand);
+    color: var(--c-white) ;
+}
+
+.btn-brand:hover{
+    background-color: var(--c-brand-light);
+    border-color: var(--c-brand-light);
+    color: var(--c-white);
+
+}
+
+
+
+/* OBJECTS */
+body{
+    font-family: var(--font-base) ;
+    color: var(--c-body);
+
+}
+
+
+a{
+    text-decoration: none ;
+    color: var(--c-brand-light) ;
+    transition: var(--transition);
+    font-size: 2vh;
+    padding: 10px;
+    width: 280px;
+}
+
+a:hover{
+    color: var(--c-white);
+}
+
+
+
+ /*SIDEBAR*/
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+li{
+    list-style-type: none;
+    padding-bottom: 15px;
+    justify-content: center;
+}
+.app-shell{
+    display: flex;
+
+}
+
+nav{
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    left: 0;
+    background: var(--c-dark) ;
+    width: 280px;
+    overflow: hidden;
+
+} 
+.logo img{
+    max-width: 200px;
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    
+
+}
+nav .fas{
+    position: relative;
+    width: 70px;
+    text-align: center;
+}
+
+
+.logout{
+    position: absolute;
+    margin-top: 20px;
+}
+
+
+/*main*/
+.main{
+    position: relative;
+    padding: 20px;
+    width: 100%;
+}
+
+.main-top{
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%;
+}
+.main-top h1{
+    font-size: 50px;
+    padding: 10PX;
+}
+
+.main-top .btn {
+    padding: 2px 2px 2px;
+    background-color: var(--c-brand); 
+    color: var(--c-white); 
+    border: none;
+    border-radius: 5px;
+    font-size: 2.5vh;
+    height: 50px;
+    width: 120px;
+    margin: 20px;
+    font-family: var(--font-base);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.main-top .btn:hover {
+    background-color: var(--c-brand-light);
+    box-shadow: 0 0 10px rgb(54, 196, 153);
+
+}
+
+.main-top .btn i {
+    margin-right: 5px; 
+    font-size: 3.5vh;
+}
+.main-forms{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    gap: 1rem;
+    justify-content: space-between;
+    
+}
+
+.main-forms .card{
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+    justify-content: space-between;
+    justify-items: center;
+    align-content: flex-start; 
+    position: flex; 
+
+    height: auto;
+    width: 250px ;
+  
+    background: var(--c-white);
+    text-align: center;
+    border-radius: 20px;
+   
+    box-shadow: var(--c-brand-light);
+
+}
+
+
+.main-forms .card:hover{
+    transition: box-shadow 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgb(54, 196, 153);
+    color: var(--c-white);
+    background-color: var(--c-brand);
+    transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    
+}
+.main-forms .card:hover i {
+    color: var(--c-white); 
+}
+
+
+.main-forms .card h2{
+    padding: 10px; 
+    margin: 10px;
+    font-size: 3vh;
+}
+
+.main-forms .card h1{
+    margin: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 3vh;
+
+}
+.main-forms .card h1.hw{
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 3vh;
+
+}
+.main-forms .card h1.blood{
+    margin: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 6vh;
+
+}
+.main-forms .card h1.patientid{
+    margin: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 6vh;
+
+}
+.main-forms .card i{
+    font-size: 30px;
+    padding-top: 20px;
+    position: relative;
+    color: var(--c-brand);
+}
+
+.medical-details{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.md-box{
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: var(--c-white);
+    border-radius: 10px;
+
+}
+
+.conditions, .allergies, .surgeries{
+    margin-top: 20px;
+    text-align: center;
+}
+.conditions-box, .allergies-box, .surgeries-box{
+    width: 100%;
+    padding: 10px;
+    padding-bottom: 30px;
+    margin-top: 10px;
+    background: var(--c-white);
+    border-radius: 10px;
+}
+.conditions-box:hover, .allergies-box:hover, .surgeries-box:hover {
+    box-shadow: 0 0 10px rgb(54, 196, 153);
+    background-color: var(--c-brand);
+    color: var(--c-white);
+    transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.conditions-box:hover .btn, .allergies-box:hover .btn, .surgeries-box:hover .btn {
+    color: var(--c-dark);
+    background-color: var(--c-white);
+}
+table{
+    padding: 10px;
+}
+
+th, td{
+    text-align: center;
+    padding: 10px;
+}
+
+.conditions-box .btn-add{
+    margin: 30px;
+    margin-bottom: 50px; 
+}
+
+.conditions .conditions-box  .conditions-table, .allergies .allergies-box .allergies-table, .surgeries .surgeries-box .surgeries-table {
+    flex: 2;
+    margin: 0 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.main .content-2{
+    min-height:  auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.main .content-2 .conditions{
+    min-height: auto;
+    flex: 5;
+    margin: 0 25px 25px 25px;
+}
+
+.main .content-2 .allergies{
+    flex: 2;
+    min-height: auto;
+    margin: 0 25px;
+}
+
+
+.content-2 h1{
+    padding-top: 30px;
+}
+
+.hidden {
+    display: none;
+}
+
+/*SETTINGS*/
+.main-section{
+    background: linear-gradient(rgb(1, 10, 10), rgba(13, 187, 135, 0.199)), var(--c-dark) ;
+    box-sizing: border-box;
+    position: relative;
+    padding: 20px;
+    width: 100%;
+    flex: 2;
+}
+
+.profile h1.header{
+    font-size: 4vh;
+    margin: 20px;
+    padding: 10px;
+    color: var(--c-white);
+}
+ h1.header2{
+    font-size: 3vh;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 10px;
+    color: var(--c-white);
+}
+.content2{
+    min-height:  auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    text-align: center;
+
+}
+
+
+.mprofile, .sprofile{
+    border-radius: 20px;
+    border: 2px solid var(--c-brand);
+    padding: 100px;
+    background-color: var(--c-white);
+
+}
+
+.mprofile:hover, .sprofile:hover {
+    box-shadow: 0 0 20px rgba(50, 226, 138, 0.774); 
+    transition: box-shadow 0.3s ease; 
+}
+
+.mprofile .btn-brand, .sprofile .btn-brand{
+    margin: 20px;
+}
+
+
+.mprofile h2, .sprofile h2 {
+    margin-top: 10px 0;
+    text-align: left; 
+
+}
+
+.input-container{
+    width: 100%;
+    gap: 2vh;
+    display: flex;
+    align-content: flex-start;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between; 
+}
+.input-container label{
+    text-align: left;
+    font-size: 2vh;
+}
+.input-container input{
+    border-radius: 5px;
+    border: 1px solid #c4c4c4;
+    width: 190px;
+    height: 30px;
+    font-size: 2vh;
+}
+.btn-brand-delete{
+    background-color: #dd1515;
+    color: var(--c-white) ;
+}   
+
+.btn-brand-delete:hover{
+    background-color: #741010;
+    color: var(--c-white);
+    
+}
+    
+
+
+.input-container select{
+    border-radius: 5px;
+    border: 1px solid #c4c4c4;
+    width: 190px;
+    height: 30px;
+    font-size: 2vh;
+    background: #fff;
+}
+.input-container input:disabled,
+.input-container select:disabled{
+    background: #e9ecef;
+    color: #555;
+}
+.btn-outline-brand{
+    background: transparent;
+    border: 1px solid var(--c-brand);
+    color: var(--c-brand);
+}
