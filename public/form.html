@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical History Form</title>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!--NAVBAR-->
+    <nav class="navbar navbar-expand-lg sticky-top bg-custom">
+        <div class="container">
+          <a class="navbar-brand" href="home.html">
+            <img class="logo2" src="assets/images/logo2.png" alt="">
+           </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="user.dashboard.html">DASHBOARD</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" id="logoutLink">LOG OUT</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+  
+    <div id="form-page" class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 form-container">
+                <h2 class="text-center">Medical History Form</h2>
+                <div id="pageAlert" class="alert d-none" role="alert"></div>
+                <form id="medical-history-form" novalidate>
+                    
+                    <!-- Personal Details Section -->
+                    <h4 class="mt-4">Personal Details</h4>
+                    <div class="form-group required ">
+                        <label for="patientName">Full Name</label>
+                        <input type="text" class="form-control inptborder" id="patientName" required>
+                    </div>
+                    <div class="form-group required">
+					<div class="d-flex align-items-end">
+						<div style="flex: 1;">
+						<label for="patientBday">Birthday</label>
+						<input type="date" class="form-control inptborder" id="patientBday" required>
+						</div>
+						<div style="flex: 1; margin-left: 10px;">
+						<label for="patientAge">Age</label>
+						<input type="number" class="form-control inptborder" id="patientAge" disabled required readonly>
+						</div>
+						<div style="flex: 1; margin-left: 10px;">
+						<label for="patientSex">Sex</label>
+						<select class="form-control inptborder" id="patientSex" required>
+							<option value="" disabled selected>Select</option>
+							<option value="M">Male</option>
+							<option value="F">Female</option>
+						</select>
+						</div>
+					</div>
+					</div>
+                    <div class="form-group required">
+					<div class="d-flex align-items-end">
+						<div style="flex: 1;">
+						<label for="patientRel">Religion</label>
+						<input type="text" class="form-control inptborder" id="patientRel" required>
+						</div>
+						<div style="flex: 1; margin-left: 10px;">
+						<label for="patientMarStat">Marital Status</label>
+						<select class="form-control inptborder" id="patientMarStat" required>
+							<option value="" disabled selected>Select</option>
+							<option value="divorced">Divorced</option>
+							<option value="married">Married</option>
+							<option value="separated">Separated</option>
+							<option value="single">Single</option>
+							<option value="widowed">Widowed</option>
+						</select>
+						</div>
+						<div style="flex: 1; margin-left: 10px;">
+						<label for="patientOccup">Occupation</label>
+						<input type="text" class="form-control inptborder" id="patientOccup" required>
+						</div>
+					</div>
+					</div>
+                    <div class="form-group required">
+					<div class="d-flex align-items-end">
+						<div style="flex: 1;">
+						<label for="patientPNum">Phone Number</label>
+						<input type="tel" class="form-control inptborder" id="patientPNum" maxlength="20" required>
+						</div>
+						<div style="flex: 1; margin-left: 10px;">
+						<label for="patientEmail">Email Address</label>
+						<input type="email" class="form-control inptborder" id="patientEmail" disabled required readonly>
+						</div>
+					</div>
+					</div>
+                    
+                    <!-- Medical Details Section -->
+                    <h4 class="mt-4">Medical Details</h4>
+					<div class="form-group required">
+					<div class="d-flex align-items-end">
+						<div style="flex: 1;">
+						<label for="patientBType">Blood Type</label>
+							<select class="form-control inptborder" id="patientBType" required>
+							<option value="" disabled selected>Select</option>
+							<option value="Unknown">Not sure</option>
+							<option value="O-">O-</option>
+							<option value="O+">O+</option>
+							<option value="A-">A-</option>
+							<option value="A+">A+</option>
+							<option value="B-">B-</option>
+							<option value="B+">B+</option>
+							<option value="AB-">AB-</option>
+							<option value="AB+">AB+</option>
+						</select>
+						</div>
+						<div style="flex: 1; margin-left: 10px;">
+						<label for="patientHeight">Height (cm)</label>
+						<input type="number" step="0.1" min="30" max="272" class="form-control inptborder" id="patientHeight" required>
+						</div>
+						<div style="flex: 1; margin-left: 10px;">
+						<label for="patientWeight">Weight (kg)</label>
+						<input type="number" step="0.1" min="1" max="500" class="form-control inptborder" id="patientWeight" required>
+						</div>
+					</div>
+					</div>
+                    <div class="form-group">
+                        <label for="doctorPDoc">PCP's Name </label>
+                        <input type="text" class="form-control inptborder" id="doctorPDoc">
+                    </div>
+					<div class="form-group">
+					<div class="d-flex align-items-end">
+						<div style="flex: 1;">
+						<label for="doctorPNum">PCP's Phone Number </label>
+						<input type="tel" class="form-control inptborder" id="doctorPNum">
+						</div>
+						<div style="flex: 1; margin-left: 10px;">
+						<label for="doctorPEmail">PCP's Email Address </label>
+						<input type="email" class="form-control inptborder" id="doctorPEmail" placeholder="example@gmail.com">
+						</div>
+					</div>
+					</div>
+                    <h4 class="mt-4">Medical Conditions</h4>
+                    <div id="conditions-container"></div>
+                    <button type="button" id="add-condition" class="btn btn-outline-primary mt-3">Add Another Condition</button>
+
+                    <h4 class="mt-4">Allergy Conditions</h4>
+                    <div id="allergy-container"></div>
+                    <button type="button" id="add-allergy" class="btn btn-outline-primary mt-3">Add Another Allergy</button>
+
+                    <h4 class="mt-4">Surgery Details</h4>
+                    <div id="surgery-container"></div>
+                    <button type="button" id="add-surgery" class="btn btn-outline-primary mt-3">Add Another Surgery</button>
+
+                    <div class="mt-4">
+                        <button type="submit" id="previewButton" class="btn btn-solid btn-block">Preview</button>
+                    </div>
+				
+				</form>
+					
+				</div>
+			</div>
+		</div>
+	
+<!-- Preview Section -->
+<div class="modal fade" id="previewModal" tabindex="-1" aria-labelledby="previewModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="previewModalLabel">Medical History Preview</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="modal-preview-content">
+            </div>
+            <div class="modal-footer">
+                <div id="modalAlert" class="alert d-none w-100" role="alert"></div>
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Back to edit</button>
+                <button type="button" id="confirmSubmit" class="btn btn-brand">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!--FOOTER-->
+    <section id="footer" class="foot">
+        <div class="container">
+          <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3"></ul>
+            <div  class="footer-logo">
+              <img src="assets/images/logo_mini.png" alt="footer-logo">
+            </div>
+            <p class="text-center">© 2024 INFOMAN BRAGAIS GARCIA PAGUIO SANAO</p>
+          </footer>
+        </div>
+    </section>
+	
+     <a id="back2Top" title="Back to top" href="#">&#10148;</a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/site.js"></script>
+    <script src="assets/js/form.js"></script>
+</body>
+</html>
+
