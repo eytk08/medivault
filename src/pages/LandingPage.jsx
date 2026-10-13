@@ -57,11 +57,40 @@ export default function LandingPage() {
         </div>
     </section>
 
-      <section className="  py-16 sm:py-20">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8"><div className="mx-auto mb-10 max-w-2xl text-center"><h2 className="mt-3 text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">Healthcare details, streamlined.</h2><p className="mt-4 leading-7 text-slate-600">Spend less time piecing together history and more time having informed conversations about care.</p></div>
-          <div className="grid gap-4 md:grid-cols-3">{benefits.map(({ icon: Icon, title, text }) => <article key={title} className="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-soft"><span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-teal-50 text-teal-700"><Icon size={20} /></span><h3 className="mt-5 text-lg font-bold text-ink">{title}</h3><p className="mt-2 text-sm leading-6 text-slate-500">{text}</p></article>)}</div>
+
+      <section className="bg-teal-100 py-16 transition-colors dark:bg-slate-950 sm:py-20">        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+          <div className="mx-auto mb-10 max-w-2xl text-center">
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-ink dark:text-white sm:text-4xl">
+              Healthcare details, streamlined.
+            </h2>
+            <p className="mt-4 leading-7 text-slate-600 dark:text-slate-300">
+              Spend less time piecing together history and more time having informed conversations about care.
+            </p>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-3">
+            {benefits.map(({ icon: Icon, title, text }) => (
+              <article
+                key={title}
+                className="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-soft dark:border-slate-700 dark:bg-slate-900"
+              >
+                <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-teal-50 text-teal-700 dark:bg-teal-900/40 dark:text-teal-300">
+                  <Icon size={20} />
+                </span>
+
+                <h3 className="mt-5 text-lg font-bold text-ink dark:text-white">
+                  {title}
+                </h3>
+
+                <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-300">
+                  {text}
+                </p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
+
       <section className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20"><div className="flex flex-col justify-between rounded-[2rem] bg-ink p-7 text-white sm:flex-row sm:items-center sm:p-10"><div className="max-w-xl"><p className="text-xs font-bold uppercase tracking-[0.18em] text-teal-300">Start with what you know</p><h2 className="mt-3 text-2xl font-extrabold sm:text-3xl">Your health history should be remembered.</h2><p className="mt-3 text-sm leading-6 text-slate-300">Create your account and add the details you want to keep close.</p></div>
       <Button size="lg" className="w-full bg-teal text-ink hover:bg-teal-00 sm:w-auto" onClick={() => navigate('/register')}>Create your vault <ArrowRight size={17} /></Button></div></section>
     </main>
