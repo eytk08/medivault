@@ -8,12 +8,20 @@ const fs = require('fs');
 const path = require('path');
 const mysql = require('mysql2/promise');
 
+// Same TLS rules as config/db.js. DB_SSL_CA holds the provider's CA certificate (Aiven ca.pem).
+const sslOptions = () => {
+  if (process.env.DB_SSL !== 'true') return undefined;
+  const options = { minVersion: 'TLSv1.2' };
+  if (process.env.DB_SSL_CA) options.ca = process.env.DB_SSL_CA.replace(/\\n/g, '\n');
+  return options;
+};
+
 (async () => {
   const dbName = process.env.DB_NAME || 'medivault';
   const conn = await mysql.createConnection({
     host: process.env.DB_HOST || 'localhost',
     port: Number(process.env.DB_PORT) || 3306,
-    ssl: process.env.DB_SSL === 'true' ? { minVersion: 'TLSv1.2' } : undefined,
+    ssl: sslOptions(),
     user: process.env.DB_USER || 'root',
     password: process.env.DB_PASSWORD || '',
     multipleStatements: true
