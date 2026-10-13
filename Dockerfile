@@ -1,7 +1,7 @@
 # MediVault container image. Two stages: build the React app, then run the API that serves it.
 
 # ---- Stage 1: build the React app (needs the dev dependencies: Vite, Tailwind) ----
-FROM node:20-alpine AS web
+FROM node:26-alpine AS web
 WORKDIR /build
 COPY package*.json ./
 # Once you have committed a package-lock.json (run `npm install` once locally), change this to `npm ci`.
@@ -12,7 +12,7 @@ COPY src ./src
 RUN npm run build
 
 # ---- Stage 2: the API, serving the built app ----
-FROM node:20-alpine
+FROM node:26-alpine
 WORKDIR /app
 COPY package*.json ./
 # Same note as above: use `npm ci --omit=dev` once a lockfile is committed.
