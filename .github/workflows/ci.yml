@@ -30,7 +30,7 @@ jobs:
       DB_PASSWORD: root
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: ${{ matrix.node }}
       # After you commit package-lock.json, switch to `npm ci` and add `cache: npm` above.
