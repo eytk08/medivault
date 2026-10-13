@@ -1,0 +1,36 @@
+# One command demo:  docker compose up --build
+# Then open http://localhost:3000   (demo login: demo@medivault.test / Demo@1234)
+services:
+  db:
+    image: mysql:8
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-rootpass}
+      MYSQL_DATABASE: ${DB_NAME:-medivault}
+    volumes:
+      - medivault_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -uroot -p$$MYSQL_ROOT_PASSWORD --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+
+  app:
+    build: .
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      PORT: 3000
+      DB_HOST: db
+      DB_USER: root
+      DB_PASSWORD: ${DB_PASSWORD:-rootpass}
+      DB_NAME: ${DB_NAME:-medivault}
+      SESSION_SECRET: ${SESSION_SECRET:-demo_secret_change_me_for_real_use}
+      COOKIE_SECURE: "false"   # this demo runs on plain http://localhost
+    ports:
+      - "${PORT:-3000}:3000"
+
+volumes:
+  medivault_data:
