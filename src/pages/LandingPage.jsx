@@ -57,7 +57,7 @@ export default function LandingPage() {
         </div>
     </section>
 
-      <section className="border-y border-emerald-800 bg-teal-900 py-16 sm:py-20">
+      <section className="  py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-8"><div className="mx-auto mb-10 max-w-2xl text-center"><h2 className="mt-3 text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">Healthcare details, streamlined.</h2><p className="mt-4 leading-7 text-slate-600">Spend less time piecing together history and more time having informed conversations about care.</p></div>
           <div className="grid gap-4 md:grid-cols-3">{benefits.map(({ icon: Icon, title, text }) => <article key={title} className="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-soft"><span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-teal-50 text-teal-700"><Icon size={20} /></span><h3 className="mt-5 text-lg font-bold text-ink">{title}</h3><p className="mt-2 text-sm leading-6 text-slate-500">{text}</p></article>)}</div>
         </div>
