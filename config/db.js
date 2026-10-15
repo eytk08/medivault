@@ -34,4 +34,13 @@ const pool = mysql.createPool({
   decimalNumbers: true,
 });
 
+console.log("Database connection target:", {
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT || 3306,
+  database: process.env.DB_NAME || "medivault",
+  sslEnabled: process.env.DB_SSL === "true",
+  usernameConfigured: Boolean(process.env.DB_USER),
+  passwordConfigured: Boolean(process.env.DB_PASSWORD),
+});
+
 module.exports = pool.promise();
